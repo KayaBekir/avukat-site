@@ -1,0 +1,748 @@
+/* ==========================================================================
+   KAYA HUKUK & DANIŞMANLIK BÜROSU — KURUMSAL STİL DOSYASI (style.css)
+   
+   İçerik Tablosu:
+   1. CSS Değişkenleri (Variables & Tema)
+   2. Temel Sıfırlama (Reset) ve Tipografi
+   3. Genel Kapsayıcılar & Yardımcı Sınıflar
+   4. Üst Bant (Top Bar) & Navigasyon (Navbar)
+   5. Genel Buton Stilleri
+   6. Hero (Giriş) Bölümü & Form Mimarisi
+   7. İstatistik Bant (Counters)
+   8. Hakkımızda & Vizyon Kartları
+   9. Hizmetler & Filtreleme Kartları
+   10. Ekip (Avukat Portreleri) Kartları
+   11. S.S.S. Akordiyon (Accordion) Bileşeni
+   12. Sabit (Floating) WhatsApp İletişim Butonu
+   13. Footer (Sayfa Altı & Yasal Bildirim)
+   14. Mobil ve Tablet Uyumluluğu (Responsive / Media Queries)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. CSS DEĞİŞKENLERİ (VARIABLES)
+   Açıklama: Tüm sitedeki renk paletini ve yazı tiplerini (font) tek bir 
+   merkezden yönetmeyi sağlar. İleride kurumsal renk değiştiğinde sadece 
+   buradaki hex kodlarını güncellemeniz yeterlidir.
+   ========================================================================== */
+   :root {
+    /* Marka Ana Renkleri */
+    --primary-navy: #1B2A4A;        /* Koyu Kurumsal Lacivert */
+    --primary-navy-hover: #2C3E66;  /* Etkileşimdeki Lacivert Tonu */
+    --accent-gold: #C5A059;         /* Premium Mat Altın Tonu */
+    --accent-gold-hover: #A8833D;   /* Etkileşimdeki Altın Tonu */
+  
+    /* Arka Plan Renk Grupları */
+    --bg-main: #F8F9FA;             /* Sayfa Genel Kırık Beyaz Zemin */
+    --bg-card: #FFFFFF;             /* Kart ve Form Zeminleri İçin Saf Beyaz */
+    --bg-alt: #F0F4F8;              /* Kontrast Oluşturan Alternatif Gri-Mavi */
+  
+    /* Tipografi & Metin Renkleri */
+    --text-main: #1B2A4A;          /* Gövde Başlıkları İçin Koyu Renk */
+    --text-muted: #6C757D;         /* İkincil Metinler Ve Açıklamalar İçin Gri */
+    --text-white: #FFFFFF;         /* Koyu Zemin Üzeri Beyaz Metin */
+  
+    /* Çerçeve & Derinlik Gölgeleri */
+    --border-color: #E9ECEF;
+    --shadow-sm: 0 2px 8px rgba(27, 42, 74, 0.06);
+    --shadow-md: 0 8px 24px rgba(27, 42, 74, 0.1);
+  
+    /* Font Aileleri */
+    --font-serif: 'Playfair Display', Georgia, serif; /* Başlıklar ve Prestij Metinleri */
+    --font-sans: 'Inter', system-ui, sans-serif;       /* Okunabilir Okuma Metinleri */
+  }
+  
+  
+  /* ==========================================================================
+     2. TEMEL SIFIRLAMA (RESET) VE GENEL AYARLAR
+     Açıklama: Tarayıcıların varsayılan dış/iç boşluklarını sıfırlar, kutu 
+     genişliği hesaplamalarını standart hale getirir.
+     ========================================================================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Padding eklenince genişliğin taşmasını önler */
+  }
+  
+  html {
+    scroll-behavior: smooth; /* Menü linklerine tıklandığında akıcı kaydırma yapar */
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+  
+  
+  /* ==========================================================================
+     3. YARDIMCI VE GENEL KAPSAYICI SINIFLAR
+     ========================================================================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .section-padding {
+    padding: 80px 0;
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 48px auto;
+  }
+  
+  .section-subtitle {
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    color: var(--primary-navy);
+  }
+  
+  
+  /* ==========================================================================
+     4. ÜST BANT (TOP BAR) & NAVİGASYON (NAVBAR)
+     Açıklama: 'position: sticky' sayesinde sayfa aşağı kaydırıldığında 
+     menü üstte cam efektiyle (backdrop-filter) sabit kalır.
+     ========================================================================== */
+  .top-bar {
+    background-color: var(--primary-navy);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Buzlu cam efekti */
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--primary-navy);
+  }
+  
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-navy);
+    color: var(--accent-gold);
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  .mobile-menu-btn {
+    display: none; /* Masaüstünde varsayılan gizlidir */
+    background: transparent;
+    border: none;
+    color: var(--primary-navy);
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent-gold);
+  }
+  
+  
+  /* ==========================================================================
+     5. BUTON STİLLERİ
+     ========================================================================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary { 
+    background-color: var(--accent-gold); 
+    color: var(--text-white); 
+  }
+  
+  .btn-primary:hover { 
+    background-color: var(--accent-gold-hover); 
+  }
+  
+  .btn-navy { 
+    background-color: var(--primary-navy); 
+    color: var(--text-white); 
+  }
+  
+  .btn-navy:hover { 
+    background-color: var(--primary-navy-hover); 
+  }
+  
+  .btn-outline { 
+    background-color: transparent; 
+    border: 1px solid var(--border-color); 
+    color: var(--primary-navy); 
+  }
+  
+  .btn-outline:hover { 
+    border-color: var(--primary-navy); 
+  }
+  
+  
+  /* ==========================================================================
+     6. HERO (GİRİŞ) BÖLÜMÜ VE HIZLI FORMKART MİMARİSİ
+     Açıklama: Görsel üzeri karartma perdesi (linear-gradient) ile okunabilirlik
+     sağlanır. Sağdaki form saf beyaz kart olarak kontrast oluşturur.
+     ========================================================================== */
+  .hero {
+    min-height: calc(100vh - 120px); 
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 60px 0;
+    background: linear-gradient(rgba(27, 42, 74, 0.85), rgba(27, 42, 74, 0.85)), 
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Sol Metin %60 - Sağ Form %40 */
+    gap: 48px;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    background-color: rgba(197, 160, 89, 0.2);
+    border: 1px solid var(--accent-gold);
+    color: #F3E5AB;
+  }
+  
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 3.25rem;
+    line-height: 1.15;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title span { 
+    color: var(--accent-gold); 
+    font-style: italic; 
+    font-weight: 400; 
+  }
+  
+  .hero-text { 
+    font-size: 1.05rem; 
+    color: rgba(255, 255, 255, 0.85); 
+    margin-bottom: 32px; 
+  }
+  
+  /* Form Kartı ve Kutuların Hizalamaları */
+  .hero-card {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .hero-card h3 {
+    color: var(--primary-navy);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .hero-card p {
+    color: #4A5568;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .hero-card .form-control {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    background-color: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: #1E293B;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  .hero-card select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2064748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+  
+  .hero-card .form-control:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+  }
+  
+  .hero-card .btn-navy {
+    height: 48px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
+  
+  
+  /* ==========================================================================
+     7. İSTATİSTİK BANT (COUNTERS)
+     ========================================================================== */
+  .stats-section {
+    background-color: var(--primary-navy);
+    color: var(--text-white);
+    padding: 48px 0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  
+  /* ==========================================================================
+     8. HAKKIMIZDA BÖLÜMÜ
+     ========================================================================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  
+  .about-features {
+    list-style: none;
+    margin-top: 24px;
+  }
+  
+  .about-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  .about-features i { 
+    color: var(--accent-gold); 
+  }
+  
+  
+  /* ==========================================================================
+     9. HİZMETLER VE FİLTRELEME BÖLÜMÜ
+     ========================================================================== */
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--bg-alt);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn.active, 
+  .filter-btn:hover { 
+    background-color: var(--primary-navy); 
+    color: var(--text-white); 
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .service-card {
+    background-color: var(--bg-card);
+    padding: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover { 
+    border-color: var(--accent-gold); 
+    transform: translateY(-4px); 
+    box-shadow: var(--shadow-md); 
+  }
+  
+  .service-icon { 
+    width: 48px; 
+    height: 48px; 
+    background-color: var(--bg-alt); 
+    color: var(--accent-gold); 
+    border-radius: 4px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .service-card h3 { 
+    font-family: var(--font-serif); 
+    font-size: 1.25rem; 
+    margin-bottom: 12px; 
+  }
+  
+  .service-card p { 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+  }
+  
+  
+  /* ==========================================================================
+     10. EKİBİMİZ (AVUKAT KARTLARI)
+     ========================================================================== */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .team-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .team-img-placeholder {
+    width: 100%;
+    height: 260px;
+    background-color: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-navy);
+  }
+  
+  .team-info { 
+    padding: 24px; 
+    text-align: center; 
+  }
+  
+  .team-name { 
+    font-family: var(--font-serif); 
+    font-size: 1.25rem; 
+    color: var(--primary-navy); 
+  }
+  
+  .team-title { 
+    font-size: 0.8rem; 
+    color: var(--accent-gold); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    margin-bottom: 12px; 
+    display: block; 
+  }
+  
+  .team-bio { 
+    font-size: 0.85rem; 
+    color: var(--text-muted); 
+  }
+  
+  
+  /* ==========================================================================
+     11. SIKÇA SORULAN SORULAR (ACCORDION)
+     Açıklama: JavaScript ile eklenen '.active' sınıfı kartın max-height 
+     değerini artırarak akıcı açılma sağlar.
+     ========================================================================== */
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  
+  .faq-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 24px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .faq-item.active .faq-content {
+    max-height: 200px;
+    padding: 0 24px 20px 24px;
+  }
+  
+  .faq-item .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+  
+  
+  /* ==========================================================================
+     12. SABİT WHATSAPP İLETİŞİM BUTONU
+     ========================================================================== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #20BA5A;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+  }
+  
+  .whatsapp-float i {
+    width: 22px;
+    height: 22px;
+  }
+  
+  
+  /* ==========================================================================
+     13. FOOTER (ALT BİLGİ & MESAİ/BİLDRİM)
+     ========================================================================== */
+  footer {
+    background-color: var(--primary-navy);
+    color: var(--text-white);
+    padding: 60px 0 20px 0;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-col h4 {
+    font-family: var(--font-serif);
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .footer-links { 
+    list-style: none; 
+  }
+  
+  .footer-links li { 
+    margin-bottom: 10px; 
+  }
+  
+  .footer-links a { 
+    color: rgba(255, 255, 255, 0.7); 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+  }
+  
+  .footer-links a:hover { 
+    color: var(--accent-gold); 
+  }
+  
+  
+  /* ==========================================================================
+     14. MOBİL VE TABLET UYUMLULUK (RESPONSIVE - MEDIA QUERIES)
+     Açıklama: Farklı cihaz genişliklerinde sayfa düzenini sütunlardan tek satıra
+     çevirerek mobil deneyimi sorunsuz kılar.
+     ========================================================================== */
+  @media (max-width: 992px) {
+    .hero-container, 
+    .about-grid, 
+    .stats-grid, 
+    .services-grid, 
+    .team-grid, 
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .mobile-menu-btn {
+      display: block; /* Mobilde hamburger butonu görünür */
+    }
+  
+    .nav-btn {
+      display: none; /* Mobilde randevu butonunu menü içine kaydırır */
+    }
+  
+    .nav-links {
+      display: none; /* JS ile .active eklenince açılır */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #FFFFFF;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+      border-bottom: 1px solid var(--border-color);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hero-title { 
+      font-size: 2.25rem; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* Mobilde WhatsApp Butonunu Yuvarlak İkona Çevirme */
+    .whatsapp-float {
+      padding: 14px;
+      border-radius: 50%;
+      bottom: 16px;
+      right: 16px;
+    }
+    
+    .whatsapp-btn-text {
+      display: none;
+    }
+  
+    .section-padding {
+      padding: 48px 0;
+    }
+  
+    .hero-title {
+      font-size: 1.85rem;
+    }
+  }

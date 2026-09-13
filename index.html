@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- =========================================================================
+       1. TEMEL META VE SEO ETİKETLERİ
+       Açıklama: Arama motorlarının (Google) siteyi doğru indekslemesi ve 
+       sosyal medyada (WhatsApp/LinkedIn) link paylaşıldığında başlık/resim 
+       çıkması için gerekli alanlar.
+       ========================================================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kaya Hukuk & Danışmanlık Bürosu | Resmi Web Sitemiz</title>
+  <meta name="description" content="Kaya Hukuk Bürosu; Ticaret, Gayrimenkul, İş ve Ceza Hukuku alanlarında profesyonel ve şeffaf avukatlık hizmeti sunmaktadır.">
+  <meta name="keywords" content="avukat, hukuk bürosu, istanbul avukat, ticaret hukuku, gayrimenkul hukuku, iş hukuku">
+  
+  <!-- Open Graph Meta Etiketleri (WhatsApp/Facebook Link Önizlemesi) -->
+  <meta property="og:title" content="Kaya Hukuk & Danışmanlık Bürosu">
+  <meta property="og:description" content="Hukuki süreçlerinizde güvenilir ve şeffaf çözüm ortağınız.">
+  <meta property="og:type" content="website">
+
+  <!-- =========================================================================
+       2. DIŞ KAYNAKLAR (CSS, GOOGLE FONTS & İKON KÜTÜPHANESİ)
+       ========================================================================= -->
+  <!-- Ana Stil Dosyamız -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts: Inter (Gövde metinleri için) & Playfair Display (Başlıklar için) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons (Hafif ve modern ikon kütüphanesi) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       3. TOP BAR (ÜST BİLGİ BANTI)
+       Açıklama: Sayfanın en üstünde yer alan hızlı iletişim hattı ve mesai saatleri.
+       Değiştirilecek Yerler: Telefon numarası, e-posta adresi ve çalışma saatleri.
+       ========================================================================= -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div>
+        <span>📞 <a href="tel:+902125550101" style="color: inherit; text-decoration: none;">+90 (212) 555 0101</a></span> &nbsp;|&nbsp; 
+        <span>✉️ <a href="mailto:info@kayahukuk.com" style="color: inherit; text-decoration: none;">info@kayahukuk.com</a></span>
+      </div>
+      <div>Çalışma Saatleri: Hafta İçi 09:00 - 18:00</div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. NAVBAR (NAVİGASYON VE MENÜ BÖLÜMÜ)
+       Açıklama: Masaüstü ve mobilde sabit duran (sticky) ana navigasyon alanı.
+       Geliştirme: Mobil menü açma/kapama butonu (Hamburger icon) entegre edilmiştir.
+       ========================================================================= -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <!-- Logo ve Büro Unvanı -->
+      <a href="#" class="logo">
+        <div class="logo-icon">K</div>
+        <div>
+          <strong style="display:block; font-family: var(--font-serif); font-size: 1.1rem;">KAYA HUKUK</strong>
+          <span style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px;">DANIŞMANLIK BÜROSU</span>
+        </div>
+      </a>
+      
+      <!-- Mobil Cihazlar İçin Hamburger Menü Butonu -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü Aç/Kapat">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <!-- Menü Linkleri (Sayfa içi yumuşak kaydırma / Smooth Scroll için ID'lere bağlanmıştır) -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#hizmetler">Uzmanlık Alanları</a></li>
+        <li><a href="#ekip">Ekibimiz</a></li>
+        <li><a href="#sss">S.S.S.</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+
+      <!-- Sağ Üst Randevu Butonu -->
+      <a href="#iletisim" class="btn btn-navy nav-btn">Randevu Al</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       5. HERO SECTION (KARŞILAMA & HIZLI ÖN DEĞERLENDİRME BÖLÜMÜ)
+       Açıklama: Sayfanın ilk açılışta %100 ekranı kaplayan tam ekran arka planlı alanı.
+       Özellikler: 
+         - Sol Taraf: Güçlü slogan ve eylem çağrısı (CTA) butonları.
+         - Sağ Taraf: WhatsApp'a yönlendiren şeffaflığı giderilmiş, öne çıkarılmış form.
+       ========================================================================= -->
+  <section class="hero">
+    <div class="container hero-container">
+      
+      <!-- SOL TARAF: Ana Başlık, Rozet ve Açıklama Metni -->
+      <div>
+        <span class="badge">Kurumsal & Şeffaf Hukuk</span>
+        <h1 class="hero-title">Hukuki Süreçlerinizde <span>Güvenilir</span> Ortak.</h1>
+        <p class="hero-text">
+          15 yılı aşkın mesleki tecrübemiz, alanında uzman dinamik kadromuz ile şirketler hukuku, gayrimenkul uyuşmazlıkları ve dava yönetiminde müvekkillerimizin haklarını ilk günden koruyoruz.
+        </p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#iletisim" class="btn btn-primary">Ön Danışmanlık Alın</a>
+          <a href="#hizmetler" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.4);">Hizmetlerimiz</a>
+        </div>
+      </div>
+
+      <!-- SAĞ TARAF: Hızlı Ön Değerlendirme Formu (Script.js ile Dinamik WhatsApp Yönlendirmeli) -->
+      <div class="hero-card">
+        <h3>Hızlı Ön Değerlendirme</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Konuyu kısaca özetleyin, ekibimiz size aynı gün dönsün.</p>
+        <form id="quickContactForm">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Adınız Soyadınız" required>
+          </div>
+          <!-- Dinamik Telefon Maskeleme İçin id="phoneInput" ve maxlength="18" Kritik Önemdedir -->
+          <div class="form-group">
+            <input type="tel" id="phoneInput" class="form-control" placeholder="0 (5XX) XXX XX XX" maxlength="18" required>
+          </div>
+          <div class="form-group">
+            <select class="form-control" required>
+              <option value="">Konu Seçiniz</option>
+              <option value="ticaret">Ticaret & Şirketler Hukuku</option>
+              <option value="gayrimenkul">Gayrimenkul & İmar Hukuku</option>
+              <option value="is">İş & Tazminat Hukuku</option>
+              <option value="diger">Diğer Hukuki Sorular</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-navy" style="width: 100%; justify-content: center;">Talebi Gönder</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. İSTATİSTİK BANT (SAYILARLA BÜRO)
+       Açıklama: Güven oluşturmak ve müvekkili ikna etmek için tecrübe verileri.
+       ========================================================================= -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Yıllık Tecrübe</div>
+      </div>
+      <div>
+        <div class="stat-number">1.200+</div>
+        <div class="stat-label">Tamamlanan Dosya</div>
+      </div>
+      <div>
+        <div class="stat-number">%98</div>
+        <div class="stat-label">Başarılı Sonuçlanma</div>
+      </div>
+      <div>
+        <div class="stat-number">250+</div>
+        <div class="stat-label">Sözleşmeli Şirket</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. HAKKIMIZDA VE VİZYON BÖLÜMÜ
+       Açıklama: Büronun vizyonu, çalışma ilkeleri ve kurumsal değerleri.
+       ========================================================================= -->
+  <section id="hakkimizda" class="section-padding">
+    <div class="container about-grid">
+      <div>
+        <span class="section-subtitle">Büromuz Hakkında</span>
+        <h2 class="section-title">Mesleki Etik ve Şeffaf Danışmanlık</h2>
+        <p style="color: var(--text-muted); margin-top: 16px;">
+          Kaya Hukuk & Danışmanlık Bürosu, İstanbul merkezli olarak yerli ve yabancı şirketlere, kurumlara ve bireysel müvekkillere nitelikli hukuki danışmanlık ve avukatlık hizmeti sunmaktadır.
+        </p>
+        <ul class="about-features">
+          <li><i data-lucide="check-circle-2"></i> Şeffaf ve Adil Süreç Bilgilendirmesi</li>
+          <li><i data-lucide="check-circle-2"></i> Ulusal ve Uluslararası Uzmanlık</li>
+          <li><i data-lucide="check-circle-2"></i> Tam Gizlilik ve Müvekkil Hakları Koruması</li>
+        </ul>
+      </div>
+      <!-- Öne Çıkarılmış Vizyon Kartı -->
+      <div style="background-color: var(--bg-alt); padding: 40px; border-radius: 6px; border-left: 4px solid var(--accent-gold);">
+        <h3 style="font-family: var(--font-serif); margin-bottom: 12px;">Vizyonumuz</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+          Müvekkillerimizin hukuki sorunlarını henüz ortaya çıkmadan önleyici hukuk yaklaşımlarıyla engellemek, uyuşmazlık durumunda ise en hızlı ve etkili sonucu almaktır.
+        </p>
+        <a href="#ekip" class="btn btn-outline" style="background: #fff;">Ekibimizle Tanışın</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. HİZMETLER VE FİLTRELEME BÖLÜMÜ
+       Açıklama: Büronun uzmanlık alanları.
+       Özellik: Tıklandığında JavaScript (filterServices) ile dinamik olarak 
+       kartları süzme (Kurumsal / Gayrimenkul / Bireysel) özelliğine sahiptir.
+       ========================================================================= -->
+  <section id="hizmetler" class="section-padding" style="background-color: #fff; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Faaliyet Alanlarımız</span>
+        <h2 class="section-title">Uzmanlaştığımız Hukuk Disiplinleri</h2>
+      </div>
+
+      <!-- Kategori Filtre Butonları -->
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterServices('all')">Tüm Hizmetler</button>
+        <button class="filter-btn" onclick="filterServices('kurumsal')">Kurumsal & Ticaret</button>
+        <button class="filter-btn" onclick="filterServices('gayrimenkul')">Gayrimenkul</button>
+        <button class="filter-btn" onclick="filterServices('bireysel')">Bireysel & Aile</button>
+      </div>
+
+      <!-- Hizmet Kartları Grid Yapısı (data-category niteliği filtreleme için kullanılır) -->
+      <div class="services-grid">
+        <div class="service-card" data-category="kurumsal">
+          <div class="service-icon"><i data-lucide="briefcase"></i></div>
+          <h3>Ticaret & Şirketler Hukuku</h3>
+          <p>Şirket kuruluşları, birleşme ve devralmalar, ticari sözleşmelerin hazırlanması ve revizesi.</p>
+        </div>
+
+        <div class="service-card" data-category="gayrimenkul">
+          <div class="service-icon"><i data-lucide="home"></i></div>
+          <h3>Gayrimenkul & İmar Hukuku</h3>
+          <p>Tapu iptali ve tescil davaları, kentsel dönüşüm uyuşmazlıkları ve kira tespiti.</p>
+        </div>
+
+        <div class="service-card" data-category="bireysel">
+          <div class="service-icon"><i data-lucide="shield"></i></div>
+          <h3>İş & Tazminat Hukuku</h3>
+          <p>İşe iade, kıdem/ihbar tazminatı, iş kazası davaları ve işveren danışmanlığı.</p>
+        </div>
+
+        <div class="service-card" data-category="kurumsal">
+          <div class="service-icon"><i data-lucide="file-text"></i></div>
+          <h3>Sözleşmeler Hukuku</h3>
+          <p>Uluslararası ticari sözleşmeler, gizlilik ve bayilik anlaşmalarının hazırlanması.</p>
+        </div>
+
+        <div class="service-card" data-category="bireysel">
+          <div class="service-icon"><i data-lucide="scale"></i></div>
+          <h3>Ceza Hukuku</h3>
+          <p>Ekonomik ve beyaz yaka suçları, soruşturma ve kovuşturma aşamalarında savunma.</p>
+        </div>
+
+        <div class="service-card" data-category="gayrimenkul">
+          <div class="service-icon"><i data-lucide="building"></i></div>
+          <h3>Kat Mülkiyeti & Yönetim</h3>
+          <p>Site ve rezidans yönetim uyuşmazlıkları, ortak gider (aidat) alacak icra takibi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. EKİBİMİZ BÖLÜMÜ
+       Açıklama: Avukatların tanıtım kartları. 
+       Not: İleride avukatın gerçek vesikalık/portre resimleri geldiğinde 
+       'team-img-placeholder' yerine <img> etiketi koyabilirsiniz.
+       ========================================================================= -->
+  <section id="ekip" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Kadromuz</span>
+        <h2 class="section-title">Deneyimli Avukatlarımız</h2>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img-placeholder"><i data-lucide="user" style="width: 64px; height: 64px; opacity: 0.4;"></i></div>
+          <div class="team-info">
+            <h3 class="team-name">Av. Bekir Kaya</h3>
+            <span class="team-title">Kurucu / Kıdemli Avukat</span>
+            <p class="team-bio">İstanbul Ün. Hukuk Fakültesi mezunu. 15 yıllık Şirketler ve Ticaret Hukuku tecrübesi.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-placeholder"><i data-lucide="user" style="width: 64px; height: 64px; opacity: 0.4;"></i></div>
+          <div class="team-info">
+            <h3 class="team-name">Av. Zeynep Yılmaz</h3>
+            <span class="team-title">Ortak Avukat</span>
+            <p class="team-bio">Gayrimenkul, İmar ve Kentsel Dönüşüm Hukuku alanında uzman kadro lideri.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-placeholder"><i data-lucide="user" style="width: 64px; height: 64px; opacity: 0.4;"></i></div>
+          <div class="team-info">
+            <h3 class="team-name">Av. Mehmet Demir</h3>
+            <span class="team-title">Danışman Avukat</span>
+            <p class="team-bio">İş Hukuku uyuşmazlıkları ve Arabuluculuk süreçlerinde 10 yıllık tecrübe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. S.S.S. (SIKÇA SORULAN SORULAR - ACCORDION BÖLÜMÜ)
+       Açıklama: Müvekkillerin aklındaki soru işaretlerini gideren akordiyon alanı.
+       Özellik: JavaScript (toggleFaq) fonksiyonu ile tıklanan soru açılır, diğeri kapanır.
+       ========================================================================= -->
+  <section id="sss" class="section-padding" style="background-color: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Bilgi Bankası</span>
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Ön danışmanlık süreci nasıl işliyor?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            Form veya telefon yoluyla bize ulaştığınızda, uzman ekibimiz konunuzu inceleyerek aynı gün içinde randevu takvimini belirler ve yapılması gereken ilk hukuki adımları paylaşır.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Danışmanlık ve dava ücretleri nasıl belirlenir?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            Ücretlerimiz Türkiye Barolar Birliği Asgari Ücret Tarifesi esas alınarak, dosyanın kapsamı ve iş yüküne göre şeffaf bir şekilde müvekkil ile önceden yazılı olarak kararlaştırılır.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Online (uzaktan) danışmanlık hizmetiniz var mı?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-content">
+            Evet, şehir dışındaki veya yurt dışındaki müvekkillerimiz için Zoom ve Google Meet üzerinden online görüntülü danışmanlık hizmeti sunmaktayız.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. SABİT WHATSAPP İLETİŞİM BUTONU
+       Açıklama: Ekranın sağ altında sürekli sabit duran (fixed) hızlı erişim butonu.
+       ========================================================================= -->
+  <a href="https://wa.me/905550000000?text=Merhaba,%20hukuki%20dan%C4%B1%C5%9Fmanl%C4%B1k%20almak%20istiyorum." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="WhatsApp İletişim">
+    <i data-lucide="message-circle"></i>
+    <span class="whatsapp-btn-text">WhatsApp Destek</span>
+  </a>
+
+  <!-- =========================================================================
+       12. FOOTER (SAYFA ALTI İLETİŞİM & YASAL UYARI)
+       Açıklama: Harita adres bilgisi, hızlı menü ve Baro Reklam Yasağına uygunluk notu.
+       ========================================================================= -->
+  <footer id="iletisim">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Büro Kısa Bilgi -->
+        <div class="footer-col">
+          <strong style="font-family: var(--font-serif); font-size: 1.3rem; display: block; margin-bottom: 12px; color: #fff;">KAYA HUKUK</strong>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            Hukuki güvenlik ve mesleki etik ilkeler çerçevesinde bireysel ve kurumsal müvekkillerimize şeffaf hizmet sunuyoruz.
+          </p>
+        </div>
+
+        <!-- Hızlı Navigasyon Linkleri -->
+        <div class="footer-col">
+          <h4>Hızlı Menü</h4>
+          <ul class="footer-links">
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+            <li><a href="#ekip">Ekibimiz</a></li>
+            <li><a href="#sss">S.S.S.</a></li>
+          </ul>
+        </div>
+
+        <!-- Uzmanlık Alanları Linkleri -->
+        <div class="footer-col">
+          <h4>Hizmetler</h4>
+          <ul class="footer-links">
+            <li><a href="#hizmetler">Ticaret Hukuku</a></li>
+            <li><a href="#hizmetler">Gayrimenkul</a></li>
+            <li><a href="#hizmetler">İş Hukuku</a></li>
+            <li><a href="#hizmetler">Ceza Hukuku</a></li>
+          </ul>
+        </div>
+
+        <!-- İletişim Detayları -->
+        <div class="footer-col">
+          <h4>İletişim</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 8px;">📍 Maslak Mah. Büyükdere Cad. No:142 Sarıyer / İstanbul</p>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 8px;">📞 <a href="tel:+902125550101" style="color: inherit; text-decoration: none;">+90 (212) 555 0101</a></p>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">✉️ <a href="mailto:info@kayahukuk.com" style="color: inherit; text-decoration: none;">info@kayahukuk.com</a></p>
+        </div>
+      </div>
+
+      <!-- Telif ve Baro Reklam Yasağı Yasal Bildirimi -->
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; color: rgba(255,255,255,0.5); text-align: center;">
+        © 2026 Kaya Hukuk Bürosu. Tüm hakları saklıdır. Bu site TBB Reklam Yasağı Yönetmeliğine uygundur.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       13. JAVASCRIPT DOSYASI VE İKON BAŞLATICI
+       ========================================================================= -->
+  <!-- Mantıksal Kodlar (Telefon maskeleme, Form yönlendirme, S.S.S. ve Filtreleme) -->
+  <script src="script.js"></script>
+  
+  <!-- Lucide SVG İkonlarının Sayfada Render Edilmesini Sağlayan Komut -->
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
